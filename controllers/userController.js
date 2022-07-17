@@ -10,4 +10,17 @@ module.exports = {
                 return res.status(500).json(err);
             });
     },
+    // Get one user
+    getOneUser(req, res) {
+        User.findOne({ _id: req.params.userId })
+        .populate('thoughts')
+        .populate('friends')
+        .select('-__v')
+        .then((userData) => 
+            !userData
+                ? res.status(404).json({ message: 'No user with that ID' })
+                : res.json(userData)
+        ) 
+        .catch((err) => res.status(500).json(err));
+    },
 }
