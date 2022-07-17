@@ -46,7 +46,7 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
-    // Delete a user by ID
+    // Delete a user by ID and deleting associated thoughts
     deleteUser(req, res) {
         User.findOneAndDelete(
             { _id: req.params.userId }
@@ -54,7 +54,14 @@ module.exports = {
         .then((user) =>
             !user
                 ? res.status(404).json({ message: 'No user with this ID!' })
-                : res.json(user)
+                : Thought.deleteMany(
+                    { username: user.username }
+                )
+                    .then((deletedUser) => 
+                        !deletedUser
+                            ? res.status(404).json({ message : 'Thoughts of user not deleted ' })
+                            : res.json(deletedUser)
+                    )
             )
             .catch((err) => res.status(500).json(err));
     },
