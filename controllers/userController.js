@@ -13,14 +13,12 @@ module.exports = {
     // Get one user
     getOneUser(req, res) {
         User.findOne({ _id: req.params.userId })
-        .populate('thoughts')
-        .populate('friends')
         .select('-__v')
-        .then((userData) => 
-            !userData
+        .then((user) =>
+            !user
                 ? res.status(404).json({ message: 'No user with that ID' })
-                : res.json(userData)
-        ) 
+                : res.json(user)
+        )
         .catch((err) => res.status(500).json(err));
     },
     // Create a user
