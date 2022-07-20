@@ -8,7 +8,7 @@ This project required the creation of a social network API using Express.js, a M
 
 No seed data was provided, so it was also required to create my own data using Insomnia after I created the API.
 
-> The walkthrough video of this application can be viewed at https://drive.google.com/file/d/1e9_a8ADhC86j7a5DG-0cDlPwgCWoqKjZ/view?usp=sharing
+> The walkthrough video of this application can be viewed at https://drive.google.com/file/d/1Fr_ZxvNBKVlWlkErdIsu3rJG6VVPIPgc/view?usp=sharing
 
 ## Table of contents
 
@@ -69,7 +69,7 @@ Below, you will find a link to a walkthrough video that shows the application in
 
 ### Walkthrough video
 
-If you wish to see this social network API in action, you can watch the walkthrough video: https://drive.google.com/file/d/1e9_a8ADhC86j7a5DG-0cDlPwgCWoqKjZ/view?usp=sharing
+If you wish to see this social network API in action, you can watch the walkthrough video: https://drive.google.com/file/d/1Fr_ZxvNBKVlWlkErdIsu3rJG6VVPIPgc/view?usp=sharing
 
 ### Screenshots
 
